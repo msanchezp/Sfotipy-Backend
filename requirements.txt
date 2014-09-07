@@ -1,3 +1,7 @@
 Django==1.6.5
 Pillow==2.5.1
 South==1.0
+tablib==0.10.0
+django-mockups==0.4.8
+django-extensions==1.4.0
+django-grapelli==2.5.3

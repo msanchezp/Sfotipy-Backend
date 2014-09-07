@@ -10,6 +10,10 @@ def signup(request):
 	if form.is_valid():
 		form.save()
 
+		#loguearse
+		#crear userprofile
+		#redireccionar a home
+
 	return render(request, 'signup.html', {'form':form})
 
 def signin(request):

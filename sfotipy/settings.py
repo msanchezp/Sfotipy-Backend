@@ -26,10 +26,19 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP+ (
+    "django.core.context_processors.request",
+)
+
+GRAPPELLI_ADMIN_TITLE = 'Sfotipy'
+
 
 # Application definition
 
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +50,8 @@ INSTALLED_APPS = (
     'albums',
     'artists',
     'userprofiles',
+    'mockups',
+    'django_extensions',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -85,6 +96,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
+MEDIA_URL = '/media/'
+
 
 # Backends
 AUTHENTICATION_BACKENDS = (
